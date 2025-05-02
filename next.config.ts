@@ -4,7 +4,7 @@ const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' https://easyflow-profile-pictures.d8ba15d176a1147e8cb7be257f6b18fb.eu.r2.cloudflarestorage.com;
+    img-src 'self' 'https://picsum.photos';
     connect-src 'self' ${process.env.NEXT_PUBLIC_REMOTE_URL};
     font-src 'self';
     object-src 'none';
@@ -65,6 +65,9 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+  images: {
+    remotePatterns: [new URL('https://picsum.photos/**')],
   },
   experimental: {
     serverActions: {

@@ -18,6 +18,7 @@ const baseConfig = {
     'coverage/**',
     '!**/.prettierrc',
     '.lintstagedrc.cjs',
+    'src/components/ui/**',
   ],
 };
 

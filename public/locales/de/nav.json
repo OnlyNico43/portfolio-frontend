@@ -1,0 +1,47 @@
+{
+  "links": {
+    "contact": "Kontakt",
+    "projects": {
+      "title": "Projekte",
+      "items": [
+        {
+          "title": "Projekt 1",
+          "description": "Beschreibung von Projekt 1",
+          "href": "#project1"
+        },
+        {
+          "title": "Projekt 2",
+          "description": "Beschreibung von Projekt 2",
+          "href": "#project2"
+        },
+        {
+          "title": "Projekt 3",
+          "description": "Beschreibung von Projekt 3",
+          "href": "#project3"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Meine technischen Fähigkeiten und Expertise",
+      "details": "Fachkompetenz im Überblick",
+      "items": [
+        {
+          "title": "Frontend-Entwicklung",
+          "description": "Kenntnisse in HTML, CSS, JavaScript/TypeScript und diversen Frameworks",
+          "href": "#frontend"
+        },
+        {
+          "title": "Backend-Entwicklung",
+          "description": "Erfahrung mit Node.js, Express und ORMs",
+          "href": "#backend"
+        },
+        {
+          "title": "DevOps",
+          "description": "Kenntnisse in CI/CD-Pipelines und Docker",
+          "href": "#devops"
+        }
+      ]
+    }
+  }
+}

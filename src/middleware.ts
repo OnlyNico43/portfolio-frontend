@@ -3,7 +3,8 @@ import type { NextRequest, NextResponse } from 'next/server';
 import i18nConfig from '../i18n.config';
 
 const middleware = async (request: NextRequest): Promise<NextResponse> => {
-  return i18nRouter(request, i18nConfig);
+  const res = i18nRouter(request, i18nConfig);
+  return res;
 };
 
 // applies this middleware only to files in the app directory

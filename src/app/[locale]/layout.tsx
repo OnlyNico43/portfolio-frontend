@@ -28,10 +28,10 @@ const RootLayout: FunctionComponent<RootLayoutProps> = async ({ params, children
   const { locale } = await params;
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased flex justify-center`}>
+      <body className={`${inter.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar locale={locale} />
-          {children}
+          <div className="w-[1382px] px-4 mx-auto h-[calc(100vh-65px)">{children}</div>
         </ThemeProvider>
       </body>
     </html>

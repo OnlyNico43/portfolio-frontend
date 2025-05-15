@@ -1,6 +1,6 @@
-'use server';
-import initTranslations from '@/app/i18n';
+'use client';
 import type { FunctionComponent, ReactElement } from 'react';
+import i18nConfig from '../../../i18n.config';
 import { Button } from '../ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
 
@@ -8,18 +8,48 @@ interface LangSwitcherProps {
   locale: string;
 }
 
-const LangSwitcher: FunctionComponent<LangSwitcherProps> = async ({ locale }): Promise<ReactElement> => {
-  const { i18n } = await initTranslations(locale, ['nav']);
+const LangSwitcher: FunctionComponent<LangSwitcherProps> = ({ locale }): ReactElement => {
+  const handleLanguageChange = (lang: string): void => {
+    // Get the current path from the browser
+    const path = window.location.pathname;
+
+    // Get the path without locale prefix
+    const pathSegments = path.split('/').filter(Boolean);
+    const currentLocale = i18nConfig.locales.includes(pathSegments[0]) ? pathSegments[0] : null;
+
+    let newPath;
+    if (currentLocale) {
+      // If we have a locale in the URL, replace it
+      newPath = path.replace(`/${currentLocale}`, `/${lang}`);
+    } else {
+      // If we don't have a locale, add it at the beginning
+      newPath = `/${lang}${path}`;
+    }
+
+    // Navigate to the new path with a full page reload
+    // This ensures Next.js properly re-renders with the new language
+    window.location.href = newPath;
+  };
+
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
         <Button variant="ghost">{locale.toUpperCase()}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        {i18n.languages
+        {i18nConfig.locales
           .filter(lang => lang !== locale)
           .map(lang => (
-            <DropdownMenuItem>{lang.toUpperCase()}</DropdownMenuItem>
+            <DropdownMenuItem
+              key={lang}
+              onSelect={e => {
+                // Prevent the default selection behavior
+                e.preventDefault();
+                handleLanguageChange(lang);
+              }}
+            >
+              {lang.toUpperCase()}
+            </DropdownMenuItem>
           ))}
       </DropdownMenuContent>
     </DropdownMenu>

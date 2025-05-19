@@ -19,6 +19,7 @@ const baseConfig = {
     '!**/.prettierrc',
     '.lintstagedrc.cjs',
     'src/components/ui/**',
+    'src/lib/utils.ts',
   ],
 };
 

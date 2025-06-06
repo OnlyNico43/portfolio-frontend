@@ -53,7 +53,7 @@ const Navbar: FunctionComponent<NavbarProps> = async ({ locale }): Promise<React
                           <NavigationMenuLink asChild>
                             <Link
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href="/skills"
+                              href={`/${locale}/skills`}
                             >
                               <div className="mb-2 mt-4 text-lg font-medium">{t('nav:links.skills.description')}</div>
                               <p className="text-sm leading-tight text-muted-foreground">
@@ -84,7 +84,7 @@ const Navbar: FunctionComponent<NavbarProps> = async ({ locale }): Promise<React
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href="/docs" lang={locale} passHref>
+                      <Link href={`/${locale}/contact`} lang={locale} passHref>
                         {t('nav:links.contact')}
                       </Link>
                     </NavigationMenuLink>

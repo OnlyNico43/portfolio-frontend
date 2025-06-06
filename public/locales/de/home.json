@@ -1,0 +1,89 @@
+{
+  "about": {
+    "title": "Über Mich",
+    "description": "Leidenschaftlicher Entwickler mit Expertise in der Erstellung skalierbarer Webanwendungen und schöner Benutzeroberflächen.",
+    "stats": [
+      {
+        "value": "5+",
+        "label": "Jahre Erfahrung"
+      },
+      {
+        "value": "50+",
+        "label": "Abgeschlossene Projekte"
+      },
+      {
+        "value": "30+",
+        "label": "Zufriedene Kunden"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Lass uns zusammenarbeiten",
+    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns gemeinsam etwas Großartiges schaffen.",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Nico",
+    "title": "Full Stack Entwickler",
+    "subtitle": "Ich entwickle außergewöhnliche digitale Erlebnisse mit modernen Web-Technologien",
+    "cta": {
+      "primary": "Meine Arbeiten",
+      "secondary": "Kontakt"
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Einige meiner neuesten Arbeiten",
+    "viewAll": "Alle Projekte anzeigen",
+    "items": [
+      {
+        "title": "E-Commerce Plattform",
+        "description": "Eine moderne E-Commerce-Lösung mit Next.js und Stripe",
+        "tags": ["Next.js", "TypeScript", "Stripe", "Tailwind"],
+        "image": "https://picsum.photos/600/400"
+      },
+      {
+        "title": "Aufgabenverwaltungs-App",
+        "description": "Kollaborative Aufgabenverwaltung mit Live-Updates",
+        "tags": ["React", "Socket.io", "Node.js", "MongoDB"],
+        "image": "https://picsum.photos/600/400"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Datenvisualisierungs-Dashboard mit interaktiven Diagrammen",
+        "tags": ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+        "image": "https://picsum.photos/600/400"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Fähigkeiten & Expertise",
+    "subtitle": "Technologien mit denen ich arbeite",
+    "viewAll": "Alle Fähigkeiten anzeigen",
+    "categories": [
+      {
+        "title": "Frontend",
+        "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      },
+      {
+        "title": "Backend",
+        "skills": ["Node.js", "Express", "PostgreSQL", "Redis"]
+      },
+      {
+        "title": "Tools",
+        "skills": ["Git", "Docker", "AWS", "CI/CD"]
+      }
+    ]
+  }
+}

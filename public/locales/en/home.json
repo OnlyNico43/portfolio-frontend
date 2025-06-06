@@ -1,0 +1,89 @@
+{
+  "about": {
+    "title": "About Me",
+    "description": "Passionate developer with expertise in creating scalable web applications and beautiful user interfaces.",
+    "stats": [
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "50+",
+        "label": "Projects Completed"
+      },
+      {
+        "value": "30+",
+        "label": "Happy Clients"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Have a project in mind? Let's create something amazing together.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Nico",
+    "title": "Full Stack Developer",
+    "subtitle": "I craft exceptional digital experiences with modern web technologies",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Get in Touch"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Some of my recent work",
+    "viewAll": "View All Projects",
+    "items": [
+      {
+        "title": "E-Commerce Platform",
+        "description": "A modern e-commerce solution built with Next.js and Stripe",
+        "tags": ["Next.js", "TypeScript", "Stripe", "Tailwind"],
+        "image": "https://picsum.photos/600/400"
+      },
+      {
+        "title": "Task Management App",
+        "description": "Real-time collaborative task management with live updates",
+        "tags": ["React", "Socket.io", "Node.js", "MongoDB"],
+        "image": "https://picsum.photos/600/400"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Data visualization dashboard with interactive charts",
+        "tags": ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+        "image": "https://picsum.photos/600/400"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technologies I work with",
+    "viewAll": "View All Skills",
+    "categories": [
+      {
+        "title": "Frontend",
+        "skills": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      },
+      {
+        "title": "Backend",
+        "skills": ["Node.js", "Express", "PostgreSQL", "Redis"]
+      },
+      {
+        "title": "Tools",
+        "skills": ["Git", "Docker", "AWS", "CI/CD"]
+      }
+    ]
+  }
+}

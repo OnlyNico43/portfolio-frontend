@@ -2,11 +2,8 @@
 import initTranslations from '@/app/i18n';
 import TranslationProvider from '@/providers/translation-provider/translation-provider';
 import { Code, Menu } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { type FunctionComponent, type ReactElement } from 'react';
-import GithubMarkWhite from '../../../public/github-mark-white.svg';
-import GithubMark from '../../../public/github-mark.svg';
 import { Button } from '../ui/button';
 import { Drawer, DrawerContent, DrawerTrigger } from '../ui/drawer';
 import {
@@ -38,7 +35,7 @@ const Navbar: FunctionComponent<NavbarProps> = async ({ locale }): Promise<React
   const { t, resources } = await initTranslations(locale, I18N_NAMESPACES);
   return (
     <TranslationProvider locale={locale} namespaces={I18N_NAMESPACES} resources={resources}>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background">
         <div className="container mx-auto px-4 max-w-[1382px] flex flex-wrap">
           <div className="w-[calc(100%-24px)] md:w-full flex h-16 items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -92,18 +89,12 @@ const Navbar: FunctionComponent<NavbarProps> = async ({ locale }): Promise<React
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
-            <div className="flex items-center space-x-1 w-[134px]">
+            <div className="flex items-center space-x-1 w-[98px]">
               <LangSwitcher locale={locale} />
               {/* div with preset witdth to prevent CLS */}
               <div className="w-10">
                 <ThemeSwitcher />
               </div>
-              <Button variant="ghost" size="icon" asChild>
-                <Link href="https://github.com/OnlyNico43" target="_blank" rel="noopener noreferrer">
-                  <Image src={GithubMark} alt="Github Link" width={28} height={28} className="dark:hidden" />
-                  <Image src={GithubMarkWhite} alt="Github Link" width={28} height={28} className="hidden dark:block" />
-                </Link>
-              </Button>
               <Drawer>
                 <DrawerTrigger className="md:hidden" asChild>
                   <Button variant="ghost" size="icon" asChild>

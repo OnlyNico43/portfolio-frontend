@@ -1,15 +1,13 @@
-'use client';
+'use server';
+import { type I18nProps } from '@/app/i18n';
 import { type FunctionComponent, type ReactElement } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface StatItem {
   value: string;
   label: string;
 }
 
-const AboutSection: FunctionComponent = (): ReactElement => {
-  const { t } = useTranslation('home');
-
+const AboutSection: FunctionComponent<I18nProps> = async ({ t }): Promise<ReactElement> => {
   return (
     <section id="about" className="py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -17,14 +15,14 @@ const AboutSection: FunctionComponent = (): ReactElement => {
           {/* Content */}
           <div className="space-y-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t('about.title')}</h2>
-              <p className="text-lg text-muted-foreground">{t('about.description')}</p>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t('home:about.title')}</h2>
+              <p className="text-lg text-muted-foreground">{t('home:about.description')}</p>
             </div>
           </div>
 
           {/* Stats */}
           <div className="grid gap-8 sm:grid-cols-3">
-            {(t('about.stats', { returnObjects: true }) as StatItem[]).map(stat => (
+            {(t('home:about.stats', { returnObjects: true }) as StatItem[]).map(stat => (
               <div
                 key={stat.label}
                 className="group relative overflow-hidden rounded-lg border bg-card p-6 text-center transition-all hover:shadow-lg"

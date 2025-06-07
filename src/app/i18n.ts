@@ -1,7 +1,11 @@
-import { createInstance, type i18n, type Resource } from 'i18next';
+import { createInstance, type i18n, type Resource, type TFunction } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { initReactI18next } from 'react-i18next/initReactI18next';
 import i18nConfig from '../../i18n.config';
+
+export interface I18nProps {
+  t: TFunction;
+}
 
 export default async function initTranslations(
   locale: string,

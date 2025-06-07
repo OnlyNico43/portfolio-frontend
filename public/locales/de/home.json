@@ -19,7 +19,7 @@
   },
   "contact": {
     "title": "Lass uns zusammenarbeiten",
-    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns gemeinsam etwas Großartiges schaffen.",
+    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns gemeinsam etwas Grossartiges schaffen.",
     "form": {
       "name": "Ihr Name",
       "email": "Ihre E-Mail",
@@ -34,8 +34,6 @@
   },
   "hero": {
     "greeting": "Hallo, ich bin",
-    "name": "Nico",
-    "title": "Full Stack Entwickler",
     "subtitle": "Ich entwickle außergewöhnliche digitale Erlebnisse mit modernen Web-Technologien",
     "cta": {
       "primary": "Meine Arbeiten",

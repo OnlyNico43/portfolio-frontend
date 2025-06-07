@@ -27,8 +27,8 @@ const ContactSection: FunctionComponent = (): ReactElement => {
         <div className="space-y-12">
           {/* Header */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t('contact.title')}</h2>
-            <p className="mt-3 text-lg text-muted-foreground">{t('contact.subtitle')}</p>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t('home:contact.title')}</h2>
+            <p className="mt-3 text-lg text-muted-foreground">{t('home:contact.subtitle')}</p>
           </div>
 
           {/* Contact Form & Social Links */}
@@ -43,16 +43,16 @@ const ContactSection: FunctionComponent = (): ReactElement => {
                 <form onSubmit={e => void handleSubmit(e)} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="name">{t('contact.form.name')}</Label>
+                      <Label htmlFor="name">{t('home:contact.form.name')}</Label>
                       <Input id="name" placeholder="John Doe" required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">{t('contact.form.email')}</Label>
+                      <Label htmlFor="email">{t('home:contact.form.email')}</Label>
                       <Input id="email" type="email" placeholder="john@example.com" required />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">{t('contact.form.message')}</Label>
+                    <Label htmlFor="message">{t('home:contact.form.message')}</Label>
                     <Textarea
                       id="message"
                       placeholder="Tell me about your project..."
@@ -69,7 +69,7 @@ const ContactSection: FunctionComponent = (): ReactElement => {
                     ) : (
                       <>
                         <Send className="mr-2 h-4 w-4" />
-                        {t('contact.form.submit')}
+                        {t('home:contact.form.submit')}
                       </>
                     )}
                   </Button>
@@ -88,19 +88,19 @@ const ContactSection: FunctionComponent = (): ReactElement => {
                   <Button variant="outline" className="w-full justify-start" asChild>
                     <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
-                      {t('contact.social.github')}
+                      {t('home:contact.social.github')}
                     </Link>
                   </Button>
                   <Button variant="outline" className="w-full justify-start" asChild>
                     <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="mr-2 h-4 w-4" />
-                      {t('contact.social.linkedin')}
+                      {t('home:contact.social.linkedin')}
                     </Link>
                   </Button>
                   <Button variant="outline" className="w-full justify-start" asChild>
                     <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                       <Twitter className="mr-2 h-4 w-4" />
-                      {t('contact.social.twitter')}
+                      {t('home:contact.social.twitter')}
                     </Link>
                   </Button>
                 </CardContent>

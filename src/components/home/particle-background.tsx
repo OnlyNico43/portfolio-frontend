@@ -9,6 +9,8 @@ interface Particle {
   vy: number;
   radius: number;
   opacity: number;
+  targetVx: number;
+  targetVy: number;
 }
 
 const ParticleBackground: FunctionComponent = (): ReactElement => {
@@ -26,10 +28,12 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
       particlesRef.current.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: Math.random() - 0.5,
-        vy: Math.random() - 0.5,
+        vx: 0,
+        vy: 0,
         radius: Math.random() * 2 + 1,
         opacity: Math.random() * 0.5 + 0.2,
+        targetVx: (Math.random() > 0.5 ? Math.random() : -Math.random()) * 0.05,
+        targetVy: (Math.random() > 0.5 ? Math.random() : -Math.random()) * 0.05,
       });
     }
   }, []);
@@ -87,6 +91,22 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
           particle.vx += Math.cos(angle) * force * 0.1;
           particle.vy += Math.sin(angle) * force * 0.1;
         }
+
+        // Gradually change target direction occasionally
+        if (Math.random() < 0.005) {
+          particle.targetVx += (Math.random() > 0.5 ? Math.random() : -Math.random()) * 0.025;
+          particle.targetVy += (Math.random() > 0.5 ? Math.random() : -Math.random()) * 0.025;
+
+          // Keep target velocity within bounds
+          const maxTarget = 0.3;
+          particle.targetVx = Math.max(-maxTarget, Math.min(maxTarget, particle.targetVx));
+          particle.targetVy = Math.max(-maxTarget, Math.min(maxTarget, particle.targetVy));
+        }
+
+        // Gradually move towards target velocity
+        const acceleration = 0.05;
+        particle.vx += (particle.targetVx - particle.vx) * acceleration;
+        particle.vy += (particle.targetVy - particle.vy) * acceleration;
 
         // Dampen velocity
         particle.vx *= 0.99;

@@ -1,13 +1,12 @@
 {
   "availability": "Verfügbar für Freelance-Arbeit",
-  "built_with": "Erstellt mit",
+  "builtWith": "Erstellt mit",
   "compliance": {
     "gdpr": "DSGVO-konform",
-    "swiss": "Schweizer Datenschutzgesetz",
-    "notice_title": "Datenschutzhinweis",
-    "notice_text": "Diese Website entspricht der EU-DSGVO und den schweizerischen Datenschutzgesetzen. Wir respektieren Ihre Privatsphäre und behandeln Ihre Daten mit Sorgfalt."
+    "noticeText": "Diese Website entspricht der EU-DSGVO und den schweizerischen Datenschutzgesetzen. Wir respektieren Ihre Privatsphäre und behandeln Ihre Daten mit Sorgfalt.",
+    "noticeTitle": "Datenschutzhinweis",
+    "swiss": "Schweizer Datenschutzgesetz"
   },
-
   "copyright": "Alle Rechte vorbehalten.",
   "description": "Leidenschaftlicher Entwickler, der innovative Weblösungen mit modernen Technologien und bewährten Praktiken erstellt.",
   "legal": {

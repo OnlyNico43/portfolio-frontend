@@ -18,19 +18,34 @@
     ]
   },
   "contact": {
-    "title": "Lass uns zusammenarbeiten",
-    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns gemeinsam etwas Grossartiges schaffen.",
+    "email": {
+      "title": "E-Mail",
+      "description": "Bevorzugen Sie E-Mail? Schreiben Sie mir eine Nachricht",
+      "address": "hallo@beispiel.com"
+    },
     "form": {
+      "title": "Nachricht senden",
+      "description": "Füllen Sie das untenstehende Formular aus und ich melde mich so schnell wie möglich bei Ihnen.",
       "name": "Ihr Name",
       "email": "Ihre E-Mail",
       "message": "Ihre Nachricht",
-      "submit": "Nachricht senden"
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "placeholders": {
+        "name": "Max Mustermann",
+        "email": "max@beispiel.com",
+        "message": "Erzählen Sie mir von Ihrem Projekt..."
+      }
     },
     "social": {
+      "title": "Vernetzen",
+      "description": "Finden Sie mich in den sozialen Medien",
       "github": "GitHub",
       "linkedin": "LinkedIn",
       "twitter": "Twitter"
-    }
+    },
+    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns gemeinsam etwas Grossartiges schaffen.",
+    "title": "Lass uns zusammenarbeiten"
   },
   "hero": {
     "greeting": "Hallo, ich bin",

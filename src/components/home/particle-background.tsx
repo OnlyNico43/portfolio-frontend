@@ -72,7 +72,7 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / 120) * 0.2;
+            const opacity = (1 - distance / 120) * 0.3;
             ctx.strokeStyle =
               resolvedTheme === 'dark' ? `rgba(255, 255, 255, ${opacity})` : `rgba(0, 0, 0, ${opacity})`;
             ctx.lineWidth = 0.5;
@@ -127,15 +127,18 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
     animationRef.current = requestAnimationFrame(animate);
   }, [drawParticles]);
 
-  useEffect(() => {
+  const handleResize = useCallback((): void => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const handleResize = (): void => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles(canvas.width, canvas.height);
-    };
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles(canvas.width, canvas.height);
+  }, [initParticles]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
     const handleMouseMove = (e: MouseEvent): void => {
       const rect = canvas.getBoundingClientRect();
@@ -145,7 +148,6 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
       };
     };
 
-    handleResize();
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
     animate();
@@ -157,9 +159,13 @@ const ParticleBackground: FunctionComponent = (): ReactElement => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [animate, initParticles]);
+  }, [animate, handleResize]);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 -z-10" style={{ width: '100%', height: '100%' }} />;
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 -z-10 w-full h-full" />;
 };
 
 export default ParticleBackground;

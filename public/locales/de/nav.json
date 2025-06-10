@@ -22,7 +22,6 @@
       ]
     },
     "skills": {
-      "title": "Skills",
       "description": "Meine technischen Fähigkeiten und Expertise",
       "details": "Fachkompetenz im Überblick",
       "items": [
@@ -41,7 +40,8 @@
           "description": "Kenntnisse in CI/CD-Pipelines und Docker",
           "href": "#devops"
         }
-      ]
+      ],
+      "title": "Fähigkeiten"
     }
   }
 }

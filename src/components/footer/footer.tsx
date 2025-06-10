@@ -171,7 +171,7 @@ const Footer: FunctionComponent<I18nProps> = ({ t }): ReactElement => {
           </div>
 
           <div className="flex flex-wrap gap-2 text-xs">
-            <span className="text-muted-foreground">{t('footer:built_with')}</span>
+            <span className="text-muted-foreground">{t('footer:builtWith')}</span>
             <Link
               href="https://nextjs.org"
               target="_blank"
@@ -205,8 +205,8 @@ const Footer: FunctionComponent<I18nProps> = ({ t }): ReactElement => {
         <div className="mt-6 rounded-lg border bg-muted/20 p-4">
           <div className="flex flex-col space-y-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
             <div className="flex-1">
-              <p className="font-medium text-foreground">{t('footer:compliance.notice_title')}</p>
-              <p>{t('footer:compliance.notice_text')}</p>
+              <p className="font-medium text-foreground">{t('footer:compliance.noticeTitle')}</p>
+              <p>{t('footer:compliance.noticeText')}</p>
             </div>
             <div className="flex flex-wrap gap-2">
               <Link href="/privacy-policy" className="underline hover:text-foreground">

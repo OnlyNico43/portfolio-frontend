@@ -1,32 +1,30 @@
 {
-  "footer": {
-    "description": "Passionate developer creating innovative web solutions with modern technologies and best practices.",
-    "location": "Switzerland",
-    "availability": "Available for freelance work",
-    "copyright": "All rights reserved.",
-    "built_with": "Built with",
-    "sections": {
-      "navigation": "Navigation",
-      "legal": "Legal",
-      "connect": "Connect"
-    },
-    "navigation": {
-      "about": "About",
-      "projects": "Projects",
-      "skills": "Skills",
-      "contact": "Contact"
-    },
-    "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "cookies": "Cookie Policy",
-      "imprint": "Imprint"
-    },
-    "compliance": {
-      "gdpr": "GDPR Compliant",
-      "swiss": "Swiss Data Protection Act",
-      "notice_title": "Data Protection Notice",
-      "notice_text": "This website complies with EU GDPR and Swiss data protection laws. We respect your privacy and handle your data with care."
-    }
+  "availability": "Available for freelance work",
+  "builtWith": "Built with",
+  "compliance": {
+    "gdpr": "GDPR Compliant",
+    "swiss": "Swiss Data Protection Act",
+    "noticeTitle": "Data Protection Notice",
+    "noticeText": "This website complies with EU GDPR and Swiss data protection laws. We respect your privacy and handle your data with care."
+  },
+  "copyright": "All rights reserved.",
+  "description": "Passionate developer creating innovative web solutions with modern technologies and best practices.",
+  "legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "imprint": "Imprint"
+  },
+  "location": "Switzerland",
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "sections": {
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "connect": "Connect"
   }
 }

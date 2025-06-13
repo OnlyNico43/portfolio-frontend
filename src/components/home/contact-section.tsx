@@ -56,7 +56,7 @@ const ContactSection: FunctionComponent = (): ReactElement => {
                     <Textarea
                       id="message"
                       placeholder={t('home:contact.form.placeholders.message')}
-                      className="min-h-[120px]"
+                      className="min-h-[120px] resize-none"
                       required
                     />
                   </div>

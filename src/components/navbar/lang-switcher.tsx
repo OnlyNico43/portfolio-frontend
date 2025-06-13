@@ -1,5 +1,7 @@
 'use client';
-import type { FunctionComponent, ReactElement } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useCallback, type FunctionComponent, type ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import i18nConfig from '../../../i18n.config';
 import { Button } from '../ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
@@ -9,27 +11,29 @@ interface LangSwitcherProps {
 }
 
 const LangSwitcher: FunctionComponent<LangSwitcherProps> = ({ locale }): ReactElement => {
-  const handleLanguageChange = (lang: string): void => {
-    // Get the current path from the browser
-    const path = window.location.pathname;
+  const { i18n } = useTranslation();
+  const path = usePathname();
+  const router = useRouter();
 
-    // Get the path without locale prefix
-    const pathSegments = path.split('/').filter(Boolean);
-    const currentLocale = i18nConfig.locales.includes(pathSegments[0]) ? pathSegments[0] : null;
+  const handleLanguageChange = useCallback(
+    (lang: string): void => {
+      // Get the path without locale prefix
+      const pathSegments = path.split('/').filter(Boolean);
+      const currentLocale = i18nConfig.locales.includes(pathSegments[0]) ? pathSegments[0] : null;
 
-    let newPath;
-    if (currentLocale) {
-      // If we have a locale in the URL, replace it
-      newPath = path.replace(`/${currentLocale}`, `/${lang}`);
-    } else {
-      // If we don't have a locale, add it at the beginning
-      newPath = `/${lang}${path}`;
-    }
+      let newPath;
+      if (currentLocale) {
+        // If we have a locale in the URL, replace it
+        newPath = path.replace(`/${currentLocale}`, `/${lang}`);
+      } else {
+        // If we don't have a locale, add it at the beginning
+        newPath = `/${lang}${path}`;
+      }
 
-    // Navigate to the new path with a full page reload
-    // This ensures Next.js properly re-renders with the new language
-    window.location.href = newPath;
-  };
+      void i18n.changeLanguage(lang, () => router.replace(newPath, { scroll: false }));
+    },
+    [i18n, path, router],
+  );
 
   return (
     <DropdownMenu>

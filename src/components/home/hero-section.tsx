@@ -1,9 +1,10 @@
 'use client';
 import TypewriterText from '@/components/home/typewriter-text';
 import { Button } from '@/components/ui/button';
+import { cx } from 'class-variance-authority';
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
-import { useState, type FunctionComponent, type ReactElement } from 'react';
+import { useEffect, useState, type FunctionComponent, type ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import ParticleBackground from './particle-background';
 
@@ -13,6 +14,23 @@ const HeroSection: FunctionComponent = (): ReactElement => {
   const [showTitle, setShowTitle] = useState(false);
   const [showSubtitle, setShowSubtitle] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  useEffect(() => {
+    // Hide scroll indicator after 50px of scrolling
+    const handleScroll = (): void => {
+      if (window.scrollY > 100) {
+        setShowScrollIndicator(false);
+      } else {
+        setShowScrollIndicator(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [setShowScrollIndicator]);
+
   return (
     <section className="relative flex min-h-[calc(100vh-65px)] items-center justify-center overflow-hidden">
       <ParticleBackground />
@@ -23,7 +41,7 @@ const HeroSection: FunctionComponent = (): ReactElement => {
             <span className="text-lg text-muted-foreground md:text-xl">{t('home:hero.greeting')}</span>
           </div>
 
-          <h1 className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
+          <h1 className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent drop-shadow-[0_0_3px_rgba(59,130,246,0.5)] md:text-7xl">
             <TypewriterText
               text={t('common:name')}
               delay={500}
@@ -80,7 +98,12 @@ const HeroSection: FunctionComponent = (): ReactElement => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        className={cx(
+          'absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce transition-opacity duration-300',
+          showScrollIndicator ? 'opacity-100' : 'opacity-0',
+        )}
+      >
         <div className="h-8 w-5 rounded-full border-2 border-muted-foreground/20">
           <div className="mx-auto mt-2 h-2 w-0.5 animate-scroll-down rounded-full bg-muted-foreground/40" />
         </div>

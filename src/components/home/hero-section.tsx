@@ -41,7 +41,7 @@ const HeroSection: FunctionComponent = (): ReactElement => {
             <span className="text-lg text-muted-foreground md:text-xl">{t('home:hero.greeting')}</span>
           </div>
 
-          <h1 className="bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent drop-shadow-[0_0_3px_rgba(59,130,246,0.5)] md:text-7xl">
+          <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-7xl">
             <TypewriterText
               text={t('common:name')}
               delay={500}

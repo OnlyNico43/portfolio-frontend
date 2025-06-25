@@ -11,10 +11,6 @@ interface Particle {
   opacity: number;
   targetVx: number;
   targetVy: number;
-  explosionVx?: number;
-  explosionVy?: number;
-  originalX?: number;
-  originalY?: number;
 }
 
 const ParticleBackground: FunctionComponent = (): ReactElement => {
